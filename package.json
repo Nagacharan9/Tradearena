@@ -1,0 +1,43 @@
+{
+  "name": "tradearena",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/src/app.js",
+    "server": "node server/src/app.js",
+    "build:prod": "npm run build && NODE_ENV=production node server/src/app.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
+    "test:security": "node server/test/trades-security.test.mjs",
+    "test:deposit-admin": "node server/test/deposit-admin-integration.test.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "react-icons": "^5.3.0",
+    "framer-motion": "^11.3.0",
+    "lightweight-charts": "^4.2.0",
+    "lucide-react": "^0.441.0",
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.5",
+    "ws": "^8.18.0",
+    "uuid": "^10.0.0",
+    "concurrently": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.2"
+  }
+}

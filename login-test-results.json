@@ -1,0 +1,34 @@
+[
+  {
+    "test": "Admin Login",
+    "email": "admin@tradearena.com",
+    "expected": "Success",
+    "actual": "Success",
+    "passed": true,
+    "message": "Passed"
+  },
+  {
+    "test": "Invalid Admin Login",
+    "email": "admin@tradearena.com",
+    "expected": "Failure",
+    "actual": "Failure",
+    "passed": true,
+    "message": "Passed"
+  },
+  {
+    "test": "Normal User Login",
+    "email": "testuser_50d07dd1@tradearena.com",
+    "expected": "Success",
+    "actual": "Success",
+    "passed": true,
+    "message": "Passed"
+  },
+  {
+    "test": "Invalid Normal User Login",
+    "email": "testuser_50d07dd1@tradearena.com",
+    "expected": "Failure",
+    "actual": "Failure",
+    "passed": true,
+    "message": "Passed"
+  }
+]

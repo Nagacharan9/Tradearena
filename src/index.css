@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   TRADEARENA — GLOBAL DESIGN SYSTEM
+   Premium Dark Luxury Theme
+   ======================================== */
+
+/* --- Base Resets --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #0d0d1a;
+  color: #e0e0f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b8eff, #00dc6e);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #59b0ff, #29f58c);
+}
+
+/* --- Selection --- */
+::selection {
+  background: rgba(59, 142, 255, 0.3);
+  color: #ffffff;
+}
+
+/* --- Glass Card --- */
+@layer components {
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    border-color: rgba(59, 142, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 142, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .glass-input {
+    @apply w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 outline-none transition-all duration-300;
+    backdrop-filter: blur(10px);
+  }
+  .glass-input:focus {
+    border-color: rgba(59, 142, 255, 0.5);
+    box-shadow: 0 0 20px rgba(59, 142, 255, 0.15);
+  }
+
+  /* Dark-themed native select dropdowns */
+  select.glass-input,
+  select.glass-input option,
+  select.glass-input optgroup {
+    background-color: #1a1a2e;
+    color: #e0e0f0;
+  }
+  select.glass-input option:checked {
+    background-color: #3b8eff;
+    color: #ffffff;
+  }
+  select.glass-input optgroup {
+    font-weight: 700;
+    color: rgba(224, 224, 240, 0.5);
+  }
+
+  .btn-primary {
+    @apply relative px-8 py-3 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #3b8eff 0%, #1555e1 100%);
+    box-shadow: 0 4px 15px rgba(59, 142, 255, 0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 142, 255, 0.6);
+  }
+
+  .btn-gold {
+    @apply relative px-8 py-3 rounded-xl font-bold text-dark-950 overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #ffbd20 0%, #f99b07 50%, #dd7302 100%);
+    box-shadow: 0 4px 15px rgba(255, 189, 32, 0.4);
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 189, 32, 0.6);
+  }
+
+  .btn-success {
+    @apply relative px-8 py-3 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #00dc6e 0%, #009048 100%);
+    box-shadow: 0 4px 15px rgba(0, 220, 110, 0.4);
+  }
+  .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 220, 110, 0.6);
+  }
+
+  .neon-text-blue {
+    text-shadow: 0 0 10px rgba(59, 142, 255, 0.5), 0 0 40px rgba(59, 142, 255, 0.2);
+  }
+  .neon-text-green {
+    text-shadow: 0 0 10px rgba(0, 220, 110, 0.5), 0 0 40px rgba(0, 220, 110, 0.2);
+  }
+  .neon-text-gold {
+    text-shadow: 0 0 10px rgba(255, 189, 32, 0.5), 0 0 40px rgba(255, 189, 32, 0.2);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #3b8eff 0%, #00dc6e 50%, #ffbd20 100%);
+  }
+
+  .gradient-text-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #59b0ff, #3b8eff);
+  }
+
+  .gradient-text-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #ffbd20, #f99b07);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* --- Particle Background --- */
+.particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle 15s linear infinite;
+}
+
+/* --- Gradient Border --- */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #3b8eff, #00dc6e, #ffbd20);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* --- Pulse Ring for Live Indicators --- */
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.live-pulse {
+  position: relative;
+}
+.live-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #00dc6e;
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+/* --- Notification Slide Down --- */
+@keyframes slideDown {
+  0% { transform: translateY(-20px) translateX(20px); opacity: 0; }
+  100% { transform: translateY(0) translateX(0); opacity: 1; }
+}
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* --- Scale In (for joining participants, badges) --- */
+@keyframes scaleIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* --- Hero Gradient Background --- */
+.bg-hero-gradient {
+  background: radial-gradient(ellipse at 50% 0%, rgba(59,142,255,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(0,220,110,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 20% 80%, rgba(255,189,32,0.04) 0%, transparent 50%);
+}
+
+/* --- Glass Card Shadow --- */
+.shadow-glass {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* --- Neon Shadows --- */
+.shadow-neon-blue { box-shadow: 0 0 20px rgba(59, 142, 255, 0.4); }
+.shadow-neon-green { box-shadow: 0 0 20px rgba(0, 220, 110, 0.4); }
+.shadow-neon-gold { box-shadow: 0 0 20px rgba(255, 189, 32, 0.4); }
+

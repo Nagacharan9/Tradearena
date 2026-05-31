@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  tradearena:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server/data:/app/server/data
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=${JWT_SECRET:-tradearena_production_secret_2026}
+      - PORT=3001
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

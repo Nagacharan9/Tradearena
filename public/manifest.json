@@ -1,0 +1,22 @@
+{
+  "name": "TradeArena - Tournament Trading",
+  "short_name": "TradeArena",
+  "description": "Competitive tournament trading platform. Join, trade, compete, win.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d1a",
+  "theme_color": "#3b8eff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

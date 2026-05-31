@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tradearena
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+    disk:
+      name: tradearena-db
+      mountPath: /app/server/data
+      sizeGB: 1
+    healthCheckPath: /api/health
